@@ -22,7 +22,7 @@ const Navbar = ({ onSelectUser }) => {
       }
 
       axios
-        .get(`http://localhost:3000/search?search=${search}`)
+        .get(`https://chatapp-backend-nyk9.onrender.com/search?search=${search}`)
         .then(res => {
           const filtered = res.data.filter(u => u.id !== user?.id);
           setResults(filtered);
@@ -41,7 +41,7 @@ const Navbar = ({ onSelectUser }) => {
   };
 
   const handleLogout = () => {
-    axios.post('http://localhost:3000/logout')
+    axios.post('https://chatapp-backend-nyk9.onrender.com/logout')
       .then(res => {
         setUser(null);
         localStorage.removeItem('user');

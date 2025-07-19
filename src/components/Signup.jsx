@@ -38,7 +38,7 @@ export default function Signup() {
       }
 
       try {
-          const response = await axios.post('http://localhost:3000/register', data );
+          const response = await axios.post('https://chatapp-backend-nyk9.onrender.com/register', data );
           alert('Signup successful!');
           navigate('/login');
       } catch (error) {

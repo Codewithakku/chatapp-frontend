@@ -30,7 +30,7 @@ function Profile() {
       <button className="circle-btn" onClick={handleShow}>
         <img
           key={profileUrl}
-          src={profileUrl || 'http://localhost:3000/uploads/default.jpeg'}
+          src={profileUrl || 'https://chatapp-backend-nyk9.onrender.com/uploads/default.jpeg'}
           alt="Avatar"
           className="rounded-circle shadow border border-2 border-primary"
           style={{

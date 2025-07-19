@@ -99,8 +99,8 @@ function SenderProfile() {
                 <img
                   src={
                     user?.profile_url?.startsWith('/uploads/')
-                      ? `http://localhost:3000${user.profile_url}`
-                      : `http://localhost:3000/uploads/${user?.profile_url || 'default.jpeg'}`
+                      ? `https://chatapp-backend-nyk9.onrender.com${user.profile_url}`
+                      : `https://chatapp-backend-nyk9.onrender.com/uploads/${user?.profile_url || 'default.jpeg'}`
                   }
                   alt="Full Profile"
                   style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', marginBottom: 8 }}

@@ -47,7 +47,7 @@ function Setting({ show, handleClose }) {
         form.append('profile_url', formData.profile_url);
       }
 
-      const response = await fetch(`http://localhost:3000/users/update/${user.id}`, {
+      const response = await fetch(`https://chatapp-backend-nyk9.onrender.com/users/update/${user.id}`, {
         method: 'PUT',
         body: form
       });
@@ -74,7 +74,7 @@ function Setting({ show, handleClose }) {
 
   const handleDeactivate = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/Deactivate', {
+      const response = await axios.post('https://chatapp-backend-nyk9.onrender.com/Deactivate', {
         userId: user.id  
       });
 

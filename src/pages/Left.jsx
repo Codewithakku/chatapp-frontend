@@ -11,7 +11,7 @@ const Left = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/users');
+        const res = await axios.get('https://chatapp-backend-nyk9.onrender.com/users');
         setUsers(res.data);
       } catch (error) {
         console.error('Error in fetching users:', error);
@@ -54,8 +54,8 @@ const Left = () => {
             <img
               src={
                 u.profile_url
-                  ? `http://localhost:3000${u.profile_url}`
-                  : 'http://localhost:3000/uploads/default.jpeg'
+                  ? `https://chatapp-backend-nyk9.onrender.com${u.profile_url}`
+                  : 'https://chatapp-backend-nyk9.onrender.com/uploads/default.jpeg'
               }
               alt="Avatar"
               className="rounded-circle shadow border border-2 border-primary"
