@@ -25,7 +25,7 @@ function SenderProfile() {
   const handleShow = () => setShow(true);
 
    const handleLogout = () => {
-    axios.post('http://localhost:3000/logout')
+    axios.post('https://chatapp-backend-nyk9.onrender.com/logout')
       .then(res => {
         setUser(null);
         localStorage.removeItem('user');
@@ -45,8 +45,8 @@ function SenderProfile() {
         <img
           src={
             user?.profile_url?.startsWith('/uploads/')
-              ? `http://localhost:3000${user.profile_url}`
-              : `http://localhost:3000/uploads/${user?.profile_url || 'default.jpeg'}`
+              ? `https://chatapp-backend-nyk9.onrender.com${user.profile_url}`
+              : `https://chatapp-backend-nyk9.onrender.com/uploads/${user?.profile_url || 'default.jpeg'}`
           }
           alt="Avatar"
           style={{ width: '55px', height: '55px', objectFit: 'cover' }}
@@ -68,8 +68,8 @@ function SenderProfile() {
             <img
               src={
                 user?.profile_url?.startsWith('/uploads/')
-                  ? `http://localhost:3000${user.profile_url}`
-                  : `http://localhost:3000/uploads/${user?.profile_url || 'default.jpeg'}`
+                  ? `https://chatapp-backend-nyk9.onrender.com${user.profile_url}`
+                  : `https://chatapp-backend-nyk9.onrender.com/uploads/${user?.profile_url || 'default.jpeg'}`
               }
               className="rounded-circle mb-3"
               alt="User"

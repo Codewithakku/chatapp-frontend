@@ -16,8 +16,8 @@ function Profile() {
   useEffect(() => {
     if (selectedUser) {
       const newProfileUrl = selectedUser.profile_url
-        ? `http://localhost:3000${selectedUser.profile_url}`
-        : 'http://localhost:3000/uploads/default.jpeg';
+        ? `https://chatapp-backend-nyk9.onrender.com${selectedUser.profile_url}`
+        : 'https://chatapp-backend-nyk9.onrender.com/uploads/default.jpeg';
       setProfileUrl(newProfileUrl);
     }
   }, [selectedUser]);
