@@ -38,7 +38,7 @@ export default function Signup() {
       }
 
       try {
-          const response = await axios.post('https://chatapp-backend-nyk9.onrender.com/register', data );
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/register`, data );
           alert('Signup successful!');
           navigate('/login');
       } catch (error) {

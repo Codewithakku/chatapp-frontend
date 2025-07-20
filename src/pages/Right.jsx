@@ -5,7 +5,7 @@ import Profile from '../components/Profile';
 import { UserContext } from '../components/UserContext';
 import { io } from 'socket.io-client';
 
-const socket = io('https://chatapp-backend-nyk9.onrender.com');
+const socket = io(import.meta.env.VITE_API_URL);
 
 const Right = () => {
   const [messages, setMessages] = useState([]);
@@ -30,7 +30,7 @@ const Right = () => {
     if (!selectedUser || !user) return;
 
     axios
-      .get('https://chatapp-backend-nyk9.onrender.com/chat/messages', {
+      .get(`${import.meta.env.VITE_API_URL}/chat/messages`, {
         params: {
           senderId: user.id,
           receiverId: selectedUser.id,
@@ -110,7 +110,7 @@ const Right = () => {
     };
 
     try {
-      await axios.post('https://chatapp-backend-nyk9.onrender.com/chat/send', newMessage);
+      await axios.post(`${import.meta.env.VITE_API_URL}/chat/send`, newMessage);
       socket.emit('chat message', newMessage);
       socket.emit('stopTyping', { senderId: user.id, receiverId: selectedUser.id });
       setInput('');

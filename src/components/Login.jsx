@@ -26,7 +26,7 @@ export default function Login() {
     e.preventDefault();  //without this line page refresh when we press login button... //without this line data cant go on backend side becozz page refresh
     try {
       // Send login request with formData object.....    // On the backend, we access it using req.body.email (not formData.email) because axios automatically converts object to json.... //object mokalsej nai.. ato json format ma mokalse atle... okay
-      const response = await axios.post('https://chatapp-backend-nyk9.onrender.com/login', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, formData);
 
       alert('Login successful!');
 

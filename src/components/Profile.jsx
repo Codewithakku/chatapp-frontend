@@ -16,8 +16,8 @@ function Profile() {
   useEffect(() => {
     if (selectedUser) {
       const newProfileUrl = selectedUser.profile_url
-        ? `https://chatapp-backend-nyk9.onrender.com${selectedUser.profile_url}`
-        : 'https://chatapp-backend-nyk9.onrender.com/uploads/default.jpeg';
+        ? `${import.meta.env.VITE_API_URL}${selectedUser.profile_url}`
+        : `${import.meta.env.VITE_API_URL}/uploads/default.jpeg`;
       setProfileUrl(newProfileUrl);
     }
   }, [selectedUser]);
@@ -30,7 +30,7 @@ function Profile() {
       <button className="circle-btn" onClick={handleShow}>
         <img
           key={profileUrl}
-          src={profileUrl || 'https://chatapp-backend-nyk9.onrender.com/uploads/default.jpeg'}
+          src={profileUrl || `${import.meta.env.VITE_API_URL}/uploads/default.jpeg`}
           alt="Avatar"
           className="rounded-circle shadow border border-2 border-primary"
           style={{
