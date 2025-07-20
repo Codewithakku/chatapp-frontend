@@ -89,8 +89,6 @@ export default function Signup() {
             type="email"
             id="email"
             required
-            pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-            title="Enter a valid email address"
             value={formData.email}
             onChange={handleChange}
             className="form-control"
